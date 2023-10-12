@@ -26,6 +26,11 @@ from Module.ScreenBroadcast import ScreenBroadcast
 from Module.RemoteSpy import RemoteSpy
 from Module.FileServer import FileServer
 
+# 解决 QThread 线程无法加入断点问题
+# import ptvsd     
+import debugpy
+
+
 
 class NetworkDiscoverThread(QThread):
     def __init__(self, config: Config, parent=None):
@@ -50,6 +55,8 @@ class NetworkDiscoverThread(QThread):
         self.terminate()
 
     def run(self):
+        debugpy.debug_this_thread()
+        # ptvsd.debug_this_thread() 
         self.socket.start()
 
 

@@ -76,3 +76,9 @@ It contains both `Client(student side)` and `Console(teacher side)`. GUI written
 ![GPLv3 or later](Images/Logo/GPLv3OrLater.png) 
 ![HCC Computer Community](Images/Logo/HCC.png)
 ![BNDSE](Images/Logo/BNDSE.png)
+
+
+python -m PyInstaller -F -i ../icons/console.ico  ConsoleMain.py --noconsole
+
+
+python -m PyInstaller -F -i ../icons/client.ico  ClientMain.py --noconsole
